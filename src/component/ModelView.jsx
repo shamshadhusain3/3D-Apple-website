@@ -5,6 +5,7 @@ import Lights from './Lights';
 import Loader from './Loader';
 import Iphone from './Iphone';
 import { Suspense } from "react";
+import Preloader from "./Preloader";
 
 const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, size, item }) => {
   return (
@@ -31,7 +32,7 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
       /> 
 
       <group ref={groupRef} name={`${index === 1} ? 'small' : 'large`} position={[0, 0 ,0]}>
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<Loader/>}>
           <Iphone 
             scale={index === 1 ? [15, 15, 15] : [17, 17, 17]}
             item={item}
